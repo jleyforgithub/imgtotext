@@ -15,7 +15,6 @@ function App() {
     await worker.initialize("eng+tha")
     const { data } = await worker.recognize(selectedImage)
     setTextResult(data.text)
-    console.log(data.text)
   }, [worker, selectedImage])
 
   useEffect(() => {
@@ -43,7 +42,7 @@ function App() {
       <div className='result'>
         {selectedImage && (
           <div className='box-image'>
-            <img src={URL.createObjectURL(selectedImage)} alt="thumb" />
+            <img src={URL.createObjectURL(selectedImage)} width='250px' alt="thumb" />
           </div>
         )}
       </div>
